@@ -9,6 +9,10 @@ const ExpenseForm = () => {
               <label>Title</label>
               <input type='text' />
           </div>
+          <div className='new-expense__control'>
+              <label>Amount</label>
+              <input type='text' />
+          </div>
       </div>
     </form>
   );
