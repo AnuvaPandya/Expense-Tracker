@@ -3,7 +3,7 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmt, setEnteredAmt] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
   //  managing one state instead of three
@@ -23,8 +23,9 @@ const ExpenseForm = (props) => {
     //   })
   };
 
-  const amtChangeHandler = (event) => {
-    setEnteredAmt(event.target.value);
+  const amountChangeHandler = (event) => {
+    console.log(event.target.value);
+    setEnteredAmount(event.target.value);
     // setUserInput({
     //   ...userInput,
     //   enteredAmt : event.target.value,
@@ -44,12 +45,12 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amt: enteredAmt,
+      amount: enteredAmount,
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
-    setEnteredAmt("");
+    setEnteredAmount("");
     setEnteredDate("");
   };
 
@@ -70,8 +71,8 @@ const ExpenseForm = (props) => {
             type="number"
             min="0.01"
             step="0.01"
-            value={enteredAmt}
-            onChange={amtChangeHandler}
+            value={enteredAmount}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className="new-expense__control">
