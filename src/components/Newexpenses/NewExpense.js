@@ -5,6 +5,7 @@ import ExpenseForm from "./ExpenseForm";
 const NewExpense = (props) => {
   const [isEditing, setIsEditing] = useState(false);
 
+  // fill values in the form by the user 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -13,7 +14,7 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
     setIsEditing(false);
   };
-
+//  open and close expense form
   const startEditingHandler = () => {
     setIsEditing(true);
   };
